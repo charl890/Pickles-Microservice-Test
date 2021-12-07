@@ -1,24 +1,33 @@
-For this solution we follow the Onion Architecture (Layered architecture with seperation of concerns)
-Domain Layer
+For this solution we follow the Onion Architecture (Layered architecture with seperation of concerns) 
+![Microservice Architecture](MicroserviceArchitecture.png "Microservice Architecture")
+
+
+**Domain Layer**
 At the center part of the Onion Architecture, the domain layer exists with individual resource/entity objects and without any cross resource dependencies. 
-Repository Layer
+
+**Repository Layer**
 This layer creates an abstraction between the domain entities and business logic of an application. This layer is the loosely coupled data access pattern implementation
-Services Layer
+
+**Services Layer**
 The Service layer holds interfaces with common operations, such as Add, Save, Edit, and Delete (CRUD). Also, this layer is used to communicate between the UI layer and repository layer. The Service layer also could hold business logic. Here, service interfaces are kept separate from their implementations, ensuring loose coupling and separation of concerns
-UI Layer
+
+**UI Layer**
 This outer-most layer keeps UIX and testability in focus using dependency injection principles so that the application builds a loosely coupled structure and can communicate to the internal layers via interfaces.
 
-We could also add the Messaging Layer to ensure scalability and redundancy of the application services and servers.
-We also could add the Security Layer to ensure appropriate Authentication and Authorization to the different entities.
-We could deploy the microservice on the cloud in isolated clusters with closer proximity to targetted customers ensuring faster performance, response time and scalability.
-For logging and auditing we could further utilize enterprise logging services based on ELK etc to ensure ease of monitoring and support.
+We could also add a **Messaging Layer** to ensure scalability and redundancy of the application services and servers.
 
-Run the code:
+We also could add a **Security Layer** to ensure appropriate Authentication and Authorization to the different entities.
 
-1. Install using : npm install
-2. Build and run using: npm start
-3. Test using: npm test (all 12 test cases should pass ensuring 90% code coverage)
-4. Runtime Test using CRUD operations run using curl command:
+We could deploy the microservice on the cloud (**infrastructure layer**) in isolated clusters with closer geo-located proximity to targetted customers ensuring faster performance, response time and scalability.
+
+For logging and auditing we could further utilize an **enterprise logging services layer** based on ELK etc to ensure ease of monitoring and support.
+
+Run the code with minimum **node version 16.13** and **npm version 8.2** and **typescript 4.5.2**:
+
+1. Install using : **npm install**
+2. Build and run using: **npm start**
+3. Test using: **npm test** (all 12 test cases should pass ensuring 90% code coverage)
+4. Runtime Test using CRUD operations run using **curl commands**:
 
 CRUD Operations: 
 
